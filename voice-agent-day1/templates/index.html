@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sneha's Voice Agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>👋 Welcome to My Voice Agent</h1>
+  <p id="message">Loading...</p>
+  <button onclick="fetchMessage()">Get Greeting</button>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
