@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World TTS</title>
+</head>
+<body>
+    <h2>Enter "hello world" to play audio</h2>
+
+    <input type="text" id="textInput" placeholder="Type 'hello world'..." />
+    <button onclick="playAudio()">Speak</button>
+
+    <audio id="audioPlayer" controls style="margin-top: 20px; display: none;">
+        <source src="http://127.0.0.1:8000/audio/97ab5482-c576-4633-af84-fe7f07f25548.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <p>Or play directly:</p>
+    <a href="http://127.0.0.1:8000/audio/97ab5482-c576-4633-af84-fe7f07f25548.mp3" target="_blank">
+        ▶️ Click here to hear "Hello World"
+    </a>
+
+    <script>
+        function playAudio() {
+            const text = document.getElementById('textInput').value.trim().toLowerCase();
+            if (text === 'hello world') {
+                const audio = document.getElementById('audioPlayer');
+                audio.style.display = 'block';
+                audio.play();
+            } else {
+                alert("Please type exactly 'hello world' to hear the audio.");
+            }
+        }
+    </script>
+</body>
+</html>
